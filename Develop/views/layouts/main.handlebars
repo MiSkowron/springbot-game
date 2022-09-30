@@ -5,36 +5,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Time!</title>
-  <link rel="stylesheet" href="/css/style.scss">
+  {{!-- <link rel="stylesheet" href="/css/style.scss"> --}}
 
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
 
-{{!-- Header --}}
-   <header class="display-flex justify-space-between align-center p-2">
+    {{!-- Header --}}
+    <header class="display-flex justify-space-between align-center p-2">
       <h1>
         <a href="/">Super Jumper</a>
       </h1>
+      {{#if logged_in}}
+      <h4>
+        Welcome {{user.username}}!
+      </h4>
+      {{/if}}
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a href="/game" id="playgame">Play Game</a>
+        <a href="/scores" id="viewscores">View Scores</a>
+        <a href="/logout" class="no-button" id="logout">Logout</a>
         {{else}}
-        <a href="/login">login</a>
+        <button href="/login">Login</button>
         {{/if}}
       </nav>
     </header>
 
-{{!-- Main --}}
+    {{!-- Main --}}
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
 
-{{!-- Footer --}}
+    {{!-- Footer --}}
     <footer>
       <p>Footer</p>
     </footer>
@@ -42,8 +48,9 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="./js/logout.js"></script>
   {{/if}}
 </body>
+
 
 </html>
