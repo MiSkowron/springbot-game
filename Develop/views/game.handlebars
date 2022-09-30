@@ -1,14 +1,16 @@
 
 <div class="container">
-<div class="start">Press space to jump</div>
     <div class="game">
-        {{!-- <img src="./assets/dino-stationary.png" alt="" id="character"> --}}
+        <div class="start">
+            <p id="gameState" >To jump press...</p>
+            <br>
+            <p id="jumpKey">Space</p>
+        </div>
+        <img src="./assets/idle.gif" alt="" id="character">
         <!-- <div id="character"></div> -->
-        <div id="block" ></div>
-        <!-- <div id="blockB"></div> -->
+        <div id="block" class="hidden"></div>
         <!-- <img src="./assets/ground.png" alt="" class="ground"> -->
     </div>
     <p>Score: <span id="scoreSpan"></span></p>
 </div>
-
-<script src="../public/js/game.js"></script>
+<script src="./js/game.js"></script>

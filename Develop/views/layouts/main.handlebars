@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Time!</title>
-  {{!-- <link rel="stylesheet" href="/css/style.scss"> --}}
+  <link rel="stylesheet" href="/css/style.css">
 
 </head>
 
@@ -25,11 +25,10 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/game" id="playgame">Play Game</a>
         <a href="/scores" id="viewscores">View Scores</a>
         <a href="/logout" class="no-button" id="logout">Logout</a>
         {{else}}
-        <button href="/login">Login</button>
+        <a href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
