@@ -1,115 +1,129 @@
 * {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-  }
-  
-  .start {
-    padding: 0;
-    margin-top: 100px;
-  }
-  
-  .game {
-    width: 500px;
-    height: 400px;
-    border: 1px solid black;
-    margin: auto;
-    margin-top: 20vh;
-    overflow: hidden;
-  }
-  
-  #character {
-    width: 50px;
-    height: 50px;
-    /* background-color: red; */
-    position: relative;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'VT323', monospace;
+}
+
+.start {
+  padding: 0;
+  margin-top: 100px;
+}
+
+.game {
+  width: 500px;
+  height: 400px;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 20vh;
+  overflow: hidden;
+  background-color: #306850;
+  color: #86c06c;
+}
+
+#jumpKey {
+  font-size: 20px;
+  color: white;
+}
+
+.score {
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+#character {
+  width: 50px;
+  height: 50px;
+  /* background-color: red; */
+  position: relative;
+  top: 150px;
+  margin-left: 100px;
+}
+
+.animate {
+  -webkit-animation: jump 0.3s linear;
+          animation: jump 0.3s linear;
+}
+
+@-webkit-keyframes jump {
+  0% {
     top: 150px;
-    margin-left: 100px;
   }
-  
-  .animate {
-    -webkit-animation: jump 0.3s linear;
-            animation: jump 0.3s linear;
+  30% {
+    top: 100px;
   }
-  
-  @-webkit-keyframes jump {
-    0% {
-      top: 150px;
-    }
-    30% {
-      top: 100px;
-    }
-    50% {
-      top: 90px;
-    }
-    55% {
-      top: 80px;
-    }
-    70% {
-      top: 100px;
-    }
-    100% {
-      top: 150px;
-    }
+  50% {
+    top: 90px;
   }
-  
-  @keyframes jump {
-    0% {
-      top: 150px;
-    }
-    30% {
-      top: 100px;
-    }
-    50% {
-      top: 90px;
-    }
-    55% {
-      top: 80px;
-    }
-    70% {
-      top: 100px;
-    }
-    100% {
-      top: 150px;
-    }
+  55% {
+    top: 80px;
   }
-  .ground {
-    position: absolute;
-    top: 340px;
+  70% {
+    top: 100px;
   }
-  
-  #block {
-    background-color: blue;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 130px;
+  100% {
+    top: 150px;
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  30% {
+    top: 100px;
+  }
+  50% {
+    top: 90px;
+  }
+  55% {
+    top: 80px;
+  }
+  70% {
+    top: 100px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+.ground {
+  position: absolute;
+  top: 340px;
+}
+
+#block {
+  /* background-color: #e0f8cf; */
+  background-image: url("../assets/bomb.png");
+  width: 20px; 
+  height: 20px;
+  position: relative;
+  top: 130px;
+  left: 500px;
+  -webkit-animation: block 1s infinite linear;
+          animation: block 1s infinite linear;
+}
+
+@-webkit-keyframes block {
+  0% {
     left: 500px;
-    -webkit-animation: block 1s infinite linear;
-            animation: block 1s infinite linear;
   }
-  
-  @-webkit-keyframes block {
-    0% {
-      left: 500px;
-    }
-    100% {
-      left: -20px;
-    }
+  100% {
+    left: -20px;
   }
-  
-  @keyframes block {
-    0% {
-      left: 500px;
-    }
-    100% {
-      left: -20px;
-    }
+}
+
+@keyframes block {
+  0% {
+    left: 500px;
   }
-  p {
-    text-align: center;
+  100% {
+    left: -20px;
   }
-  
-  .hidden {
-    display: none;
-  }/*# sourceMappingURL=style.css.map */
+}
+p {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

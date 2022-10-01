@@ -7,6 +7,8 @@ var score = document.getElementById("scoreSpan");
 var counter = 0;
 
 const keys = ["KeyA", "KeyW", "Space", "KeyQ", "KeyD", "KeyE", "ShiftLeft", "KeyR"]
+// keys const for testing
+// const keys = ["Space", "ShiftLeft"]
 
 document.addEventListener("keydown", start, { once: true })
 
@@ -58,10 +60,10 @@ function jump(){
 function getKey(){
     var randomKey = keys[Math.floor(Math.random()* keys.length)]
     jumpKey.innerText = randomKey
-    console.log(randomKey);
+    // console.log(randomKey);
     document.addEventListener('keydown', event => {
         // getKey()
-        console.log(event.code)
+        // console.log(event.code)
         if(event.code === jumpKey.innerText ) {
             jump();
             getKey()
@@ -74,10 +76,13 @@ function gameOver() {
     score.classList.add("hidden")
     block.style.animation = "none";
     block.classList.add("hidden")
-    character.src = "./assets/idle.gif"
     // block.style.animation = "block 1s infinite linear";
     jumpKey.innerText = ("Score: "+Math.floor(counter/100));
     counter=0;
+    character.src = "./assets/dead.gif"
+    setTimeout(function(){
+        character.src = "./assets/dead.png"
+    },570);
     setTimeout(() => {
         document.addEventListener("keydown", event => {
             window.location.reload()
