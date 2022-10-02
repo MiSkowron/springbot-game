@@ -1,8 +1,29 @@
+@import '../scss/variables', '../scss/button', '../scss/navbar', '../scss/login' ;
+
+// Global Styles ----------------------------------------
+
 * {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
   font-family: 'VT323', monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+// Navbar Styles ----------------------------------------
+
+// Footer Styles ----------------------------------------
+
+// Game Styles ----------------------------------------
+
+.gameContainer {
+
+  p{
+    text-align: center;
+  }
 }
 
   .start {
@@ -13,12 +34,13 @@
   .game {
     width: 500px;
     height: 400px;
-    border: 1px solid black;
+    border: 1px solid $blk-gba;
     margin: auto;
-    margin-top: 20vh;
+    margin-top: 10vh;
     overflow: hidden;
-    background-color: #306850;
-    color: #86c06c;
+    user-select: none;
+    background-color: $dark-gba;
+    color: $mid-gba;
   }
 
 #jumpKey {
@@ -26,7 +48,7 @@
   color: white;
 }
 
-.score {
+#score {
   padding-top: 20px;
   font-size: 20px;
 }
@@ -34,6 +56,7 @@
 #character {
   width: 50px;
   height: 50px;
+  pointer-events: none;
   /* background-color: red; */
   position: relative;
   top: 150px;
@@ -42,27 +65,15 @@
 
   .animate{
     animation: jump 0.3s linear;
-    @include keyframes(jump){
-      0%{top: 150px;}
+  }
+  
+  @keyframes jump{
+    0%{top: 150px;}
     30%{top: 100px;}
     50%{top: 90px;}
     55%{top: 80px;}
     70%{top: 100px;}
     100%{top: 150px;}
-    }
-  }
-  
-  // @keyframes jump{
-  //   0%{top: 150px;}
-  //   30%{top: 100px;}
-  //   50%{top: 90px;}
-  //   55%{top: 80px;}
-  //   70%{top: 100px;}
-  //   100%{top: 150px;}
-  // }
-
-  .hidden {
-    display: none;
   }
   
   .ground {
@@ -72,7 +83,7 @@
   
   #block {
     /* background-color: #e0f8cf; */
-    background-image: url("./assets/bomb.png");
+    background-image: url("../assets/bomb.png");
     width: 20px; 
     height: 20px;
     position: relative;
@@ -85,12 +96,5 @@
     0%{left: 500px}
     100%{left: -20px}
   }
-  
-  p{
-    text-align: center;
-  }
-  
-  .hidden {
-    display: none;
-  }
+
   

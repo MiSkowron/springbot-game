@@ -1,0 +1,32 @@
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10; 
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    padding-bottom: 20px;
+}
+
+.title {
+    padding-right: 200px;
+    padding-left: 200px;
+    text-align: center;
+    color: $dark-gba;
+    margin-top: 3vh;
+    font-size: 80px;
+    a:visited, a:link{
+        text-decoration: none;
+        color: $dark-gba;
+    }
+    a:hover {
+        color: $mid-gba;
+    }
+}
+
+.loginBtn, .scoresBtn, .logoutBtn {
+  @include buttonStyles;
+}
+
+

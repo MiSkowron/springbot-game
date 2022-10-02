@@ -1,8 +1,108 @@
+.disabled {
+  background: #999;
+  color: #555;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 100px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding-bottom: 20px;
+}
+
+.title {
+  padding-right: 200px;
+  padding-left: 200px;
+  text-align: center;
+  color: #306850;
+  margin-top: 3vh;
+  font-size: 80px;
+}
+.title a:visited, .title a:link {
+  text-decoration: none;
+  color: #306850;
+}
+.title a:hover {
+  color: #86c06c;
+}
+
+.loginBtn, .scoresBtn, .logoutBtn {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.loginBtn a:link, .loginBtn a:visited, .scoresBtn a:link, .scoresBtn a:visited, .logoutBtn a:link, .logoutBtn a:visited {
+  background-color: #86c06c;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.loginBtn a:hover, .loginBtn a:active, .scoresBtn a:hover, .scoresBtn a:active, .logoutBtn a:hover, .logoutBtn a:active {
+  background-color: #e0f8cf;
+  color: #306850;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #071821;
+}
+
+.loginForm, .signupForm {
+  margin-top: 80px;
+  padding: 80px;
+  font-size: 30px;
+}
+.loginForm h2, .signupForm h2 {
+  margin-bottom: 30px;
+  text-decoration: underline;
+  pointer-events: none;
+}
+
+input {
+  width: 200px;
+  height: 30px;
+  margin: 10px;
+}
+
+.btn-primary {
+  background-color: #86c06c;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.btn-primary:hover {
+  background-color: #e0f8cf;
+  color: #306850;
+}
+
 * {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+.gameContainer p {
+  text-align: center;
 }
 
 .start {
@@ -13,13 +113,15 @@
 .game {
   width: 500px;
   height: 400px;
-  border: 1px solid black;
+  border: 1px solid #071821;
   margin: auto;
-  margin-top: 20vh;
+  margin-top: 10vh;
   overflow: hidden;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background-color: #306850;
-  /* background-image: url("../assets/bg.png"); */
   color: #86c06c;
 }
 
@@ -97,7 +199,7 @@
 #block {
   /* background-color: #e0f8cf; */
   background-image: url("../assets/bomb.png");
-  width: 20px; 
+  width: 20px;
   height: 20px;
   position: relative;
   top: 130px;
@@ -122,11 +224,4 @@
   100% {
     left: -20px;
   }
-}
-p {
-  text-align: center;
-}
-
-.hidden {
-  display: none;
 }/*# sourceMappingURL=style.css.map */
