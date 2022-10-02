@@ -83,7 +83,7 @@ router.get("/scores", async (req, res) => {
 
     const users = userData.map((score) => score.get({ plain: true }));
     console.log("checking log in status: " + req.session.logged_in);
-    res.render("game", {
+    res.render("scores", {
       users,
       logged_in: req.session.logged_in,
     });

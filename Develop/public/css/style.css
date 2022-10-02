@@ -123,6 +123,7 @@ input {
           user-select: none;
   background-color: #306850;
   color: #86c06c;
+  background-image: url("../assets/bg.png");
 }
 
 #jumpKey {
