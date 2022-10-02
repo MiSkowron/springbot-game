@@ -224,4 +224,24 @@ input {
   100% {
     left: -20px;
   }
+}
+.saveBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.saveBtn a:link, .saveBtn a:visited {
+  background-color: #86c06c;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.saveBtn a:hover, .saveBtn a:active {
+  background-color: #e0f8cf;
+  color: #306850;
 }/*# sourceMappingURL=style.css.map */

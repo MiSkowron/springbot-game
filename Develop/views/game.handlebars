@@ -12,6 +12,11 @@
         <!-- <img src="./assets/ground.png" alt="" class="ground"> -->
     </div>
     <p id="score">Score: <span id="scoreSpan"></span></p>
+     {{#if logged_in}}
+         <div class="saveBtn">
+            <a id="saveScore" href="/scores">Save Score</a>
+          </div>
+          {{/if}}
     {{!-- <button type="button" id="easy">Easy</button>
     <button type="button" id="normal">Normal</button>
     <button type="button" id="hard">Hard</button> --}}

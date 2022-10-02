@@ -13,10 +13,6 @@
   display: none;
 }
 
-// Navbar Styles ----------------------------------------
-
-// Footer Styles ----------------------------------------
-
 // Game Styles ----------------------------------------
 
 .gameContainer {
@@ -96,5 +92,24 @@
     0%{left: 500px}
     100%{left: -20px}
   }
+
+  .saveBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    @include buttonStyles;
+  }
+
+  // #scoreForm {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   margin-top: 10px;
+
+  //   input {
+  //     margin-top: 30px;
+  //   }
+  // }
 
   
