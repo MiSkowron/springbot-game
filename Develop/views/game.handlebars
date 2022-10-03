@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="gameContainer">
     <div class="game">
         <div class="start">
             <p id="gameState" >To jump press...</p>
@@ -11,6 +11,14 @@
         <div id="block" class="hidden"></div>
         <!-- <img src="./assets/ground.png" alt="" class="ground"> -->
     </div>
-    <p>Score: <span id="scoreSpan"></span></p>
+    <p id="score">Score: <span id="scoreSpan"></span></p>
+     {{#if logged_in}}
+         <div class="saveBtn">
+            <a id="saveScore" href="/scores">Save Score</a>
+          </div>
+          {{/if}}
+    {{!-- <button type="button" id="easy">Easy</button>
+    <button type="button" id="normal">Normal</button>
+    <button type="button" id="hard">Hard</button> --}}
 </div>
 <script src="./js/game.js"></script>

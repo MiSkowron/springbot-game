@@ -1,115 +1,248 @@
+.disabled {
+  background: #999;
+  color: #555;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 100px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding-bottom: 20px;
+}
+
+.title {
+  padding-right: 200px;
+  padding-left: 200px;
+  text-align: center;
+  color: #306850;
+  margin-top: 3vh;
+  font-size: 80px;
+}
+.title a:visited, .title a:link {
+  text-decoration: none;
+  color: #306850;
+}
+.title a:hover {
+  color: #86c06c;
+}
+
+.loginBtn, .scoresBtn, .logoutBtn {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.loginBtn a:link, .loginBtn a:visited, .scoresBtn a:link, .scoresBtn a:visited, .logoutBtn a:link, .logoutBtn a:visited {
+  background-color: #86c06c;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.loginBtn a:hover, .loginBtn a:active, .scoresBtn a:hover, .scoresBtn a:active, .logoutBtn a:hover, .logoutBtn a:active {
+  background-color: #e0f8cf;
+  color: #306850;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #071821;
+}
+
+.loginForm, .signupForm {
+  margin-top: 80px;
+  padding: 80px;
+  font-size: 30px;
+}
+.loginForm h2, .signupForm h2 {
+  margin-bottom: 30px;
+  text-decoration: underline;
+  pointer-events: none;
+}
+
+input {
+  width: 200px;
+  height: 30px;
+  margin: 10px;
+}
+
+.btn-primary {
+  background-color: #86c06c;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.btn-primary:hover {
+  background-color: #e0f8cf;
+  color: #306850;
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-  }
-  
-  .start {
-    padding: 0;
-    margin-top: 100px;
-  }
-  
-  .game {
-    width: 500px;
-    height: 400px;
-    border: 1px solid black;
-    margin: auto;
-    margin-top: 20vh;
-    overflow: hidden;
-  }
-  
-  #character {
-    width: 50px;
-    height: 50px;
-    /* background-color: red; */
-    position: relative;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "VT323", monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+.gameContainer p {
+  text-align: center;
+}
+
+.start {
+  padding: 0;
+  margin-top: 100px;
+}
+
+.game {
+  width: 500px;
+  height: 400px;
+  border: 1px solid #071821;
+  margin: auto;
+  margin-top: 10vh;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #306850;
+  color: #86c06c;
+  background-image: url("../assets/bg.png");
+}
+
+#jumpKey {
+  font-size: 20px;
+  color: white;
+}
+
+#score {
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+#character {
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  /* background-color: red; */
+  position: relative;
+  top: 150px;
+  margin-left: 100px;
+}
+
+.animate {
+  -webkit-animation: jump 0.3s linear;
+          animation: jump 0.3s linear;
+}
+
+@-webkit-keyframes jump {
+  0% {
     top: 150px;
-    margin-left: 100px;
   }
-  
-  .animate {
-    -webkit-animation: jump 0.3s linear;
-            animation: jump 0.3s linear;
+  30% {
+    top: 100px;
   }
-  
-  @-webkit-keyframes jump {
-    0% {
-      top: 150px;
-    }
-    30% {
-      top: 100px;
-    }
-    50% {
-      top: 90px;
-    }
-    55% {
-      top: 80px;
-    }
-    70% {
-      top: 100px;
-    }
-    100% {
-      top: 150px;
-    }
+  50% {
+    top: 90px;
   }
-  
-  @keyframes jump {
-    0% {
-      top: 150px;
-    }
-    30% {
-      top: 100px;
-    }
-    50% {
-      top: 90px;
-    }
-    55% {
-      top: 80px;
-    }
-    70% {
-      top: 100px;
-    }
-    100% {
-      top: 150px;
-    }
+  55% {
+    top: 80px;
   }
-  .ground {
-    position: absolute;
-    top: 340px;
+  70% {
+    top: 100px;
   }
-  
-  #block {
-    background-color: blue;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 130px;
+  100% {
+    top: 150px;
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  30% {
+    top: 100px;
+  }
+  50% {
+    top: 90px;
+  }
+  55% {
+    top: 80px;
+  }
+  70% {
+    top: 100px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+.ground {
+  position: absolute;
+  top: 340px;
+}
+
+#block {
+  /* background-color: #e0f8cf; */
+  background-image: url("../assets/bomb.png");
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 130px;
+  left: 500px;
+  -webkit-animation: block 1s infinite linear;
+          animation: block 1s infinite linear;
+}
+
+@-webkit-keyframes block {
+  0% {
     left: 500px;
-    -webkit-animation: block 1s infinite linear;
-            animation: block 1s infinite linear;
   }
-  
-  @-webkit-keyframes block {
-    0% {
-      left: 500px;
-    }
-    100% {
-      left: -20px;
-    }
+  100% {
+    left: -20px;
   }
-  
-  @keyframes block {
-    0% {
-      left: 500px;
-    }
-    100% {
-      left: -20px;
-    }
+}
+
+@keyframes block {
+  0% {
+    left: 500px;
   }
-  p {
-    text-align: center;
+  100% {
+    left: -20px;
   }
-  
-  .hidden {
-    display: none;
-  }/*# sourceMappingURL=style.css.map */
+}
+.saveBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.saveBtn a:link, .saveBtn a:visited {
+  background-color: #86c06c;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.saveBtn a:hover, .saveBtn a:active {
+  background-color: #e0f8cf;
+  color: #306850;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,29 @@
+// Regular button 
+@mixin buttonStyles {
+    padding-left: 100px;
+    padding-right: 100px;
+    a:link, a:visited {
+        background-color: $mid-gba;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+      
+      a:hover, a:active {
+        background-color: $light-gba;
+        color: $dark-gba;
+      }
+}
+
+// Disabled button
+.disabled {
+    background: #999;
+    color: #555;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 100px;
+  }

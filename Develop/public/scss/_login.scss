@@ -1,0 +1,41 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $blk-gba;
+}
+
+.loginForm, .signupForm {
+    margin-top: 80px;
+    padding: 80px;
+    font-size: 30px;
+
+    h2 {
+        margin-bottom: 30px;
+        text-decoration: underline;
+        pointer-events: none;
+    }
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+   }
+
+.btn-primary {
+    background-color: $mid-gba;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 20px;
+
+    &:hover {
+        background-color: $light-gba;
+        color: $dark-gba;
+    }
+}

@@ -4,32 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Time!</title>
+  <title>Springbot!</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
+  {{!-- <div class="flex-column justify-space-around"> --}}
 
-    {{!-- Header --}}
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">Super Jumper</a>
-      </h1>
-      {{#if logged_in}}
-      <h4>
-        Welcome {{user.username}}!
-      </h4>
+    {{!-- Navbar --}}
+    <header>
+
+  {{!-- Scores BTN --}}
+    {{#if logged_in}}
+      <nav class="navLeft">
+        <ul class="navLeftLinks">
+           <div class="loginBtn">
+            <a href="/scores" id="viewscores">Scores</a>
+          </div>
+        </ul>
+      </nav>
+      {{else}}
+       <nav class="navLeft">
+        <ul class="navLeftLinks">
+            <li><a href="/login" id="viewscores" class="disabled">Scores</a></li>
+        </ul>
+      </nav>
       {{/if}}
+
+    {{!-- Title --}}
+      <h1 class="title">
+        <a href="/">Springbot</a>
+      </h1>
+
+    {{!-- Login and Profile buttons --}}
       <nav>
+        <ul>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/scores" id="viewscores">View Scores</a>
-        <a href="/logout" class="no-button" id="logout">Logout</a>
+           <div class="logoutBtn">
+            <a id="logout" href="/login">Logout</a>
+          </div>
         {{else}}
-        <a href="/login">Login</a>
+        <li>
+          <div class="loginBtn">
+            <a href="/login">Login</a>
+          </div>
+          </li>
         {{/if}}
+        </ul>
       </nav>
     </header>
 
@@ -39,10 +63,6 @@
       {{{ body }}}
     </main>
 
-    {{!-- Footer --}}
-    <footer>
-      <p>Footer</p>
-    </footer>
   </div>
 
   <!-- Render script for logged in users only -->

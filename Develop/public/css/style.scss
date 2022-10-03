@@ -1,53 +1,76 @@
-*{
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
+@import '../scss/variables', '../scss/button', '../scss/navbar', '../scss/login' ;
+
+// Global Styles ----------------------------------------
+
+* {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'VT323', monospace;
+}
+
+.hidden {
+  display: none;
+}
+
+// Game Styles ----------------------------------------
+
+.gameContainer {
+
+  p{
+    text-align: center;
   }
+}
 
   .start {
     padding: 0;
     margin-top: 100px;
   }
   
-  .game{
+  .game {
     width: 500px;
     height: 400px;
-    border: 1px solid black;
+    border: 1px solid $blk-gba;
     margin: auto;
-    margin-top: 20vh;
+    margin-top: 10vh;
     overflow: hidden;
+    user-select: none;
+    background-color: $dark-gba;
+    color: $mid-gba;
+    background-image: url("../assets/bg.png");
   }
-  #character{
-    width: 50px;
-    height: 50px;
-    /* background-color: red; */
-    position:relative;
-    top: 150px;
-    margin-left: 100px;
-  }
+
+#jumpKey {
+  font-size: 20px;
+  color: white;
+}
+
+#score {
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+#character {
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  /* background-color: red; */
+  position: relative;
+  top: 150px;
+  margin-left: 100px;
+}
+
   .animate{
     animation: jump 0.3s linear;
-    @include keyframes(jump){
-      0%{top: 150px;}
+  }
+  
+  @keyframes jump{
+    0%{top: 150px;}
     30%{top: 100px;}
     50%{top: 90px;}
     55%{top: 80px;}
     70%{top: 100px;}
     100%{top: 150px;}
-    }
-  }
-  
-  // @keyframes jump{
-  //   0%{top: 150px;}
-  //   30%{top: 100px;}
-  //   50%{top: 90px;}
-  //   55%{top: 80px;}
-  //   70%{top: 100px;}
-  //   100%{top: 150px;}
-  // }
-
-  .hidden {
-    display: none;
   }
   
   .ground {
@@ -55,9 +78,10 @@
     top: 340px;
   }
   
-  #block{
-    background-color: blue;
-    width: 20px;
+  #block {
+    /* background-color: #e0f8cf; */
+    background-image: url("../assets/bomb.png");
+    width: 20px; 
     height: 20px;
     position: relative;
     top: 130px;
@@ -69,12 +93,24 @@
     0%{left: 500px}
     100%{left: -20px}
   }
-  
-  p{
-    text-align: center;
+
+  .saveBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    @include buttonStyles;
   }
-  
-  .hidden {
-    display: none;
-  }
+
+  // #scoreForm {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   margin-top: 10px;
+
+  //   input {
+  //     margin-top: 30px;
+  //   }
+  // }
+
   
