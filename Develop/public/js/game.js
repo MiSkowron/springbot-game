@@ -4,6 +4,8 @@ var jumpKey = document.getElementById("jumpKey");
 var gameState = document.getElementById("gameState");
 var score = document.getElementById("scoreSpan");
 var scoreTxt = document.getElementById("score");
+var saveBtn = document.getElementById("saveScore");
+var statusCheck;
 
 // Difficulty option buttons
 
@@ -40,7 +42,7 @@ function start() {
     setTimeout(function(){
         block.classList.remove("hidden")
 
-    var statusCheck = setInterval(function() {
+     statusCheck = setInterval(function() {
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
         let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
         // HIT
@@ -90,6 +92,7 @@ function getKey(){
 }
 
 function gameOver() {
+    clearInterval(statusCheck);
     gameState.innerText = "Game Over! Press any key to restart."
     score.classList.add("hidden")
 
@@ -108,9 +111,30 @@ function gameOver() {
     },570);
     setTimeout(() => {
         document.addEventListener("keydown", event => {
-            window.location.reload()
+            // window.location.reload()
         })
       }, 1000)
 }
+
+const recordScore = async () => {
+    console.log(score);
+if(score.innerText) {
+    const userScore = score.innerText
+    console.log(userScore);
+    const response = await fetch(`/api/scores`, {
+        method: 'POST',
+        body: JSON.stringify({score: userScore}),
+        headers: { 'Content-Type': 'application/json' },
+    });
+    if(response.ok) {
+        // document.location.replace('/scores');
+        
+    } else {
+        alert('Faild to post score')
+    }
+}
+};
+
+document.addEventListener('DOMContentLoaded', () => saveBtn.addEventListener('click', recordScore) )
 
 
