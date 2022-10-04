@@ -121,9 +121,12 @@ input {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background-color: #306850;
   color: #86c06c;
-  background-image: url("../assets/bg.png");
+}
+
+#bg {
+  position: absolute;
+  z-index: -1;
 }
 
 #jumpKey {
@@ -144,6 +147,7 @@ input {
   position: relative;
   top: 150px;
   margin-left: 100px;
+  z-index: 1;
 }
 
 .animate {
@@ -207,6 +211,7 @@ input {
   left: 500px;
   -webkit-animation: block 1s infinite linear;
           animation: block 1s infinite linear;
+  z-index: 1;
 }
 
 @-webkit-keyframes block {

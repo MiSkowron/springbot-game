@@ -35,9 +35,14 @@
     margin-top: 10vh;
     overflow: hidden;
     user-select: none;
-    background-color: $dark-gba;
+    // background-color: $dark-gba;
     color: $mid-gba;
-    background-image: url("../assets/bg.png");
+    // background-image: url("../assets/bg.png");
+  }
+
+  #bg {
+    position: absolute;
+    z-index: -1;
   }
 
 #jumpKey {
@@ -58,6 +63,7 @@
   position: relative;
   top: 150px;
   margin-left: 100px;
+  z-index: 1;
 }
 
   .animate{
@@ -87,6 +93,7 @@
     top: 130px;
     left: 500px;
     animation: block 1s infinite linear;
+    z-index: 1;
   }
   
   @keyframes block{

@@ -1,15 +1,16 @@
 
 <div class="gameContainer">
     <div class="game">
+        <img id="bg" src="./assets/bg.png"/>
         <div class="start">
             <p id="gameState" >To jump press...</p>
             <br>
             <p id="jumpKey">Space</p>
         </div>
         <img src="./assets/idle.gif" alt="" id="character">
-        <!-- <div id="character"></div> -->
+
         <div id="block" class="hidden"></div>
-        <!-- <img src="./assets/ground.png" alt="" class="ground"> -->
+
     </div>
     <p id="score">Score: <span id="scoreSpan"></span></p>
      {{#if logged_in}}
