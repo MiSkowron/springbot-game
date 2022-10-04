@@ -5,11 +5,13 @@ const userData = require('./userData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-
-  await User.bulkCreate(userData, {
+for (const user of userData) {
+  await User.create(user, {
     individualHooks: true,
     returning: true,
   });
+}
+  
 
   process.exit(0);
 };

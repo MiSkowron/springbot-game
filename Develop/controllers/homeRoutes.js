@@ -78,13 +78,21 @@ router.get("/scores", async (req, res) => {
     const userData = await User.findAll({
       attributes: { exclude: ["password"] },
       order: [["username", "ASC"]],
-      include: [{ model: Score }],
+      include: [{
+         model: Score,
+         order:[["score","DESC"]], 
+       }],
     });
 
-    const users = userData.map((score) => score.get({ plain: true }));
-    console.log("checking log in status: " + req.session.logged_in);
+    const users = userData.map((user) => user.get({ plain: true }));
+
+    const scores = users.map((user) => user.scores.map((score) => ({
+      username: user.username,
+      score: score.score 
+    })));
+    const scoreData = scores.flat().sort((a,b) => b.score - a.score).slice(0,20);
     res.render("scores", {
-      users,
+      scores: scoreData,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
