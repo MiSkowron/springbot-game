@@ -1,7 +1,8 @@
-<div>
+{{!-- <div>
 
   <div class="col-md-6 project-list">
     <h3>Scores:</h3>
+
 
     {{#each scores as |score|}}
     <div class="row mb-2">
@@ -13,4 +14,31 @@
     
   </div>
  
-</div>
+</div> --}}
+
+<div class="wireframeContainer">
+{{#each scores as |score|}}
+    <div class="scoresContainer">
+      <div class="listA">
+          <h4>{{score.username}}--{{score.score}}</h4>
+        
+      </div>
+  {{/each}}
+      {{!-- <div class="listB">
+        <ol class="worldLeadership">
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+        </ol>
+      </div>
+    </div>
+
+
+</div> --}} --}}
