@@ -90,6 +90,11 @@ input {
   color: #306850;
 }
 
+.parts {
+  width: 70%;
+  margin-left: 100px;
+}
+
 * {
   padding: 0;
   margin: 0;
