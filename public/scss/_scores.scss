@@ -1,11 +1,38 @@
-.myScores,.worldLeadership {
-    width: 50%;
-    margin: 100px;
-}
+// .myScores,.worldLeadership {
+//     width: 50%;
+//     margin: 100px;
+// }
 
-.wireframeContainer {
+// .wireframeContainer {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+.scoreContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+.userScoreCard, .globalScoreCard {
+    flex: 1;
+    margin: 80px;
+    border:1px solid black;
+    transition: 0.3s;
+    padding: 20px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        text-decoration: underline;
+    }
+
+    h4 {
+        text-align: center;
+        padding: 15px;
+    }
+  }
+  
+  /* Add some padding inside the card container */
+  .scoreInfo {
+    padding: 2px 16px;
+  }

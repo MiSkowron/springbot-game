@@ -14,7 +14,7 @@
   </div>
  
 </div> --}}
-
+{{!-- 
 <div class="wireframeContainer">
     {{#each scores as |score|}}
         <div class="scoresContainer">
@@ -22,4 +22,26 @@
               <h4>{{score.username}}--{{score.score}}</h4>
             
           </div>
-      {{/each}}
+      {{/each}} --}}
+
+<div class="scoreContainer">
+
+<div class="userScoreCard">
+    <h2>My Top 10</h2>
+  <div class="scoreInfo">
+       {{#each scores as |score|}}
+  <h4>{{score.username}}--{{score.score}}</h4>
+        {{/each}}
+  </div>
+</div>
+
+<div class="globalScoreCard">
+  <h2>Global Top 10</h2>
+    <div class="scoreInfo">
+       {{#each scores as |score|}}
+  <h4>{{score.username}}--{{score.score}}</h4>
+        {{/each}}
+  </div>
+</div>
+
+</div>
