@@ -95,6 +95,17 @@ input {
   margin-left: 100px;
 }
 
+.myScores, .worldLeadership {
+  width: 50%;
+  margin: 100px;
+}
+
+.wireframeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   padding: 0;
   margin: 0;
