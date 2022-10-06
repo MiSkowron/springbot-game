@@ -1,47 +1,27 @@
-{{!-- <div>
-
-  <div class="col-md-6 project-list">
-    <h3>Scores:</h3>
-
-    {{#each scores as |score|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{score.username}}--{{score.score}}</h4>
-      </div>
-    </div>
-    {{/each}}
-    
-  </div>
- 
-</div> --}}
-{{!-- 
-<div class="wireframeContainer">
-    {{#each scores as |score|}}
-        <div class="scoresContainer">
-          <div class="listA">
-              <h4>{{score.username}}--{{score.score}}</h4>
-            
-          </div>
-      {{/each}} --}}
+<h1 class="scoreTitle">High Scores</h1>
 
 <div class="scoreContainer">
 
 <div class="userScoreCard">
-    <h2>My Top 10</h2>
+    <h2> <img class="trophy" src="./assets/trophy.png" /> My Top 10 <img class="trophy" src="./assets/trophy.png" /></h2>
+    {{#if logged_in}}
   <div class="scoreInfo">
        {{#each scores as |score|}}
-  <h4>{{score.username}}--{{score.score}}</h4>
+  <h4>- {{score.username}}: {{score.score}}</h4>
         {{/each}}
   </div>
+  {{/if}}
 </div>
 
 <div class="globalScoreCard">
-  <h2>Global Top 10</h2>
+  <h2><img class="globe" src="./assets/globe.png" /> Global Top 10 <img class="globe" src="./assets/globe.png" /></h2>
     <div class="scoreInfo">
        {{#each scores as |score|}}
-  <h4>{{score.username}}--{{score.score}}</h4>
+  <h4>- {{score.username}}: {{score.score}}</h4>
         {{/each}}
   </div>
 </div>
 
 </div>
+
+<img class="destroyed" src="./assets/destroyed.png" />

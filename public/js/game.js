@@ -146,6 +146,7 @@ if(score.innerText) {
 }
 };
 
+
 document.addEventListener('DOMContentLoaded', () => saveBtn.addEventListener('click', recordScore, { once: true }) )
 
 
