@@ -1,11 +1,57 @@
-.myScores,.worldLeadership {
-    width: 50%;
-    margin: 100px;
+.scoreTitle {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 65px;
+  text-decoration: underline;
+  color: $mid-gba;
 }
 
-.wireframeContainer {
+.scoreContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
+
+.userScoreCard, .globalScoreCard {
+    flex: 1;
+    margin: 80px;
+    border:1px solid $mid-gba;
+    transition: 0.3s;
+    padding: 20px;
+    background-color: $mid-gba;
+    user-select: none;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        text-decoration: underline;
+        font-size: 40px;
+        color: $dark-gba;
+    }
+
+    h4 {
+        text-align: center;
+        padding: 15px;
+        font-size: 25px;
+        color: $light-gba;
+
+        &:before {
+            counter-increment: rank-counter;
+            color: $dark-gba;
+            text-decoration: underline  $dark-gba;
+            content: counter(rank-counter);
+        }   
+    }
+  }
+  
+  /* Add some padding inside the card container */
+  .scoreInfo {
+    padding: 2px 16px;
+    counter-set: rank-counter;
+  }
+
+  .destroyed {
+    width: 60%;
+    margin-left: 300px;
+  }
+
+
 

@@ -90,7 +90,7 @@ router.get("/scores", async (req, res) => {
       username: user.username,
       score: score.score 
     })));
-    const scoreData = scores.flat().sort((a,b) => b.score - a.score).slice(0,20);
+    const scoreData = scores.flat().sort((a,b) => b.score - a.score).slice(0,10);
     res.render("scores", {
       scores: scoreData,
       logged_in: req.session.logged_in,
